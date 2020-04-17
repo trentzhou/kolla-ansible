@@ -16,6 +16,7 @@
   run_once: True
   register: result
   changed_when: false
+  ignore_errors: yes
   failed_when: result.stdout | regex_replace('(.*ssh_key.*)', '')  is search(":")
 
 - name: Check if nscd is running
